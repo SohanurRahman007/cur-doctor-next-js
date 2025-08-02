@@ -63,7 +63,6 @@ export default function Navbar() {
           <a className="btn btn-outline">Appointment</a>
         </div>
       </div>
-      ;
     </div>
   );
 }
