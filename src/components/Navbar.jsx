@@ -59,8 +59,16 @@ export default function Navbar() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn btn-outline">Appointment</a>
+        <div className="navbar-end space-x-4">
+          <Link href="/login" className="btn btn-ghost">
+            Login
+          </Link>
+          <Link href="/register" className="btn btn-ghost">
+            Register
+          </Link>
+          <Link href="/appointment" className="btn btn-outline">
+            Appointment
+          </Link>
         </div>
       </div>
     </div>
