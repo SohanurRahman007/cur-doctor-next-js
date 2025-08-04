@@ -1,108 +1,63 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import RegisterForm from "./component/RegisterForm";
 
 export default function RegisterPage() {
   return (
-    <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
+    <div className="flex w-full max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      {/* Left Side Banner */}
       <div
-        className="hidden bg-cover lg:block lg:w-1/2"
+        className="hidden lg:block lg:w-1/2 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80')",
+          backgroundImage: "url('https://i.ibb.co/CKzDQ5LV/social.jpg')",
         }}
       ></div>
 
-      <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
-        <div className="flex justify-center mx-auto">
-          <Image
-            height={200}
-            width={250}
-            src="https://merakiui.com/images/logo.svg"
-            alt="logo"
-          />
+      {/* Right Side Form */}
+      <div className="w-full px-6 py-8 md:px-10 lg:w-1/2 flex flex-col justify-center">
+        {/* Logo */}
+        <div className="flex justify-center mb-4">
+          <Image src="/assets/logo.svg" alt="Logo" width={80} height={50} />
         </div>
 
-        <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-          Welcome back!
-        </p>
+        {/* Heading */}
+        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
+          Create an account
+        </h2>
 
-        <a
-          href="#"
-          className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-        >
+        {/* Google Sign Up */}
+        <button className="flex items-center justify-center w-full mb-4 text-gray-700 border rounded-lg hover:bg-gray-100 transition-colors duration-300">
           <div className="px-4 py-2">
-            {/* Replace with <Image /> from Next.js if you want */}
             <svg className="w-6 h-6" viewBox="0 0 40 40">
-              {/* Google Icon SVG Paths */}
+              {/* Google Icon */}
             </svg>
           </div>
           <span className="w-5/6 px-4 py-3 font-bold text-center">
-            Sign in with Google
+            Sign up with Google
           </span>
-        </a>
+        </button>
 
-        <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
-          <a
-            href="#"
-            className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
-          >
-            or login with email
-          </a>
-          <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+        {/* Separator */}
+        <div className="flex items-center justify-between my-4">
+          <span className="w-1/5 border-b border-gray-300 lg:w-1/4"></span>
+          <span className="text-xs text-gray-500 uppercase">or</span>
+          <span className="w-1/5 border-b border-gray-300 lg:w-1/4"></span>
         </div>
 
-        <div className="mt-4">
-          <label
-            className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-            htmlFor="LoggingEmailAddress"
-          >
-            Email Address
-          </label>
-          <input
-            id="LoggingEmailAddress"
-            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-            type="email"
-          />
-        </div>
+        {/* Form */}
+        <RegisterForm />
 
-        <div className="mt-4">
-          <div className="flex justify-between">
-            <label
-              className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-              htmlFor="loggingPassword"
-            >
-              Password
-            </label>
-            <a
-              href="#"
-              className="text-xs text-gray-500 dark:text-gray-300 hover:underline"
-            >
-              Forget Password?
-            </a>
-          </div>
-          <input
-            id="loggingPassword"
-            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-            type="password"
-          />
-        </div>
-
-        <div className="mt-6">
-          <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
-            Sign In
-          </button>
-        </div>
-
-        <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-          <a
-            href="#"
-            className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
-          >
-            or sign up
-          </a>
-          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+        {/* Already have an account */}
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-600">
+            Already have an account?{" "}
+            <Link href="/login" className="text-blue-500 hover:underline">
+              Login
+            </Link>
+          </p>
         </div>
       </div>
     </div>

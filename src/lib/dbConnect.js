@@ -12,6 +12,7 @@ let cachedClient = null;
 
 export const collectionNameObj = {
   serviceCollection: "car-services",
+  userCollection: "users",
 };
 
 export async function dbConnect(collectionName) {
